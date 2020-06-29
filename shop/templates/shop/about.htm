@@ -1,0 +1,89 @@
+{% extends 'shop/basic.htm' %}
+{% block title %} Title of About{% endblock %}
+{% block body %} 
+{% load static %}
+
+<main role="main">
+
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+  <div class="jumbotron mt-5">
+    <div class="container-fluid">
+      <div class="row">
+      
+      <h1 class="display-3">Zaitscart.in</h1>
+      
+       
+       
+       <a href="/shop"><img src='{% static "images/zaitscart2.png" %}' style=" width:250px ; height:74px ;vertical-align:middle" class="rounded">
+      </a>
+    </div>
+  </div>
+      <p>Zaitscart is an Indian e-commerce company based in Unnao, Uttar Pradesh, India. It was founded by Ziyaul Aijaz in 2020. The company initially focused on website development, before expanding into product categories such as consumer electronics, fashion, home essentials & groceries, and lifestyle products.
+
+The service competes primarily with Amazon's Indian subsidiary, and the domestic rival Snapdeal. As estimated, by  2027, Zaitscart will be holding 39.5% market share of India's e-commerce industry. Zaitscart is significantly dominant in the sale of apparel , and was described as being "neck and neck" with Amazon in the sale of electronics and mobile phones.
+
+</p>
+          </div>
+  
+<br><br><br><br>
+  <div class="container mt-5">
+    
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <h2>INSTAGRAM</h2>
+        <p>Find us at our Instagram page. </p>
+        <a href="https://www.instagram.com/the__ziyaul__aijaz/" ><img src='{% static "images/instagram2.jpeg" %}' style="width:50px; height: 50px"></a>
+      </div>
+      <div class="col-md-4">
+        <h2>FACEBOOK</h2>
+        <p>Find us at our Facebook Page.</p>
+        <a href="https://www.facebook.com/profile.php?id=100009108662649"><img src='{% static "images/facebook2.jpeg" %}' style="width:50px; height: 50px"></a>
+      </div>
+      <div class="col-md-4">
+        <h2>GMAIL</h2>
+        <p>Mail us.</p>
+        <p><a href="mailto: ziyaulaijaz9781@gmail.com"><img src='{% static "images/Gmail2.jpeg" %}' style="width:50px; height: 50px"></a></p>
+      </div>
+    </div>
+
+    <hr>
+
+  </div>  <!-- /container -->
+
+</main>
+<div class="container">
+<footer class="container">  <p>&copy; Design by- ZIYAUL AIJAZ | 2001</p>
+</footer><hr></div>
+
+{% endblock %}
+ {% block js %}     
+    <script>
+      console.log('working');
+            if(localStorage.getItem('cart') == null){
+      var cart = {};
+      }
+      else
+      {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      document.getElementById('cart').innerHTML = Object.keys(cart).length;
+      }
+      $('.cart').click(function(){
+      console.log('clicked');
+      var idstr = this.id.toString();
+      console.log(idstr);
+      if (cart[idstr] !=undefined){
+      cart[idstr] = cart[idstr] + 1;
+      }
+      else
+      {
+      cart[idstr] = 1;
+      }
+      console.log(cart);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      document.getElementById('cart').innerHTML = Object.keys(cart).length;
+      });
+      $('#popovercart ').popover()
+        document.getElementById("popovercart").setAttribute('data-content', '<h4> Cart </h4>');
+
+      </script>
+      {% endblock %}

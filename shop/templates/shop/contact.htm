@@ -1,0 +1,76 @@
+{% extends 'shop/basic.htm' %}
+{% block title %} Title of Contact{% endblock %}
+{% block body %}
+{% load static %}
+<br>
+<main>
+<div class="row">
+  <div class="col-md-6">
+<div class="container mt-5 ">
+<form action="/shop/contact/" method="post">{% csrf_token %}
+<h2> Facing Problems?<br>
+We are here to solve them.</h2>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Please Provide your full name">
+  </div>
+  <div class="form-group">
+    <label for="name">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Please Provide your e-mail">
+  </div>
+  <div class="form-group">
+    <label for="name">Phone Number-(With Country Code)</label>
+    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Please Provide your Phone Number">
+  </div>  
+  <div class="form-group">
+    <label for="desc">Enter your problem.</label>
+    <textarea class="form-control" id="desc" name='desc'rows="3"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
+
+</div>
+</div>
+ <div class="container mt-5 col-md-6">
+  <h2> Also  stay connected with us through social media.</h2>
+  <img src='{% static "images/socialmedia.jpeg" %}' style="width:700px; height: 400px">
+  <div class="">
+      <div class="row mt-5">
+      <div class="col-sm-4">
+        <h2>INSTAGRAM</h2>
+        <p>Find us at our Instagram page. </p>
+        <a href="https://www.instagram.com/the__ziyaul__aijaz/" ><img src='{% static "images/instagram2.jpeg" %}' style="width:50px; height: 50px"></a>
+      </div>
+      <div class="col-sm-4">
+        <h2>FACEBOOK</h2>
+        <p>Find us at our Facebook Page.</p>
+        <a href="https://www.facebook.com/profile.php?id=100009108662649"><img src='{% static "images/facebook2.jpeg" %}' style="width:50px; height: 50px"></a>
+      </div>
+      <div class="col-sm-4">
+        <h2>GMAIL</h2>
+        <p>Mail us.</p>
+        <p><a href="mailto: ziyaulaijaz9781@gmail.com"><img src='{% static "images/Gmail2.jpeg" %}' style="width:50px; height: 50px"></a></p>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+ </div>
+</div>
+</main>
+<div class="container">
+<hr>
+<footer class="container">  <p>&copy; Design by- ZIYAUL AIJAZ | 2001</p>
+</footer><hr>
+{% endblock %}
+{% block js %}
+<script>
+  {% if thank %}
+alert('Thanks for contacting us. Your problem will be resolved soon.');
+document.location = "/shop/contact";
+{% endif %}
+</script>
+{% endblock %}
