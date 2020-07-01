@@ -1,0 +1,1 @@
+web: gunicorn zaitscart.wsgi --log-file -
