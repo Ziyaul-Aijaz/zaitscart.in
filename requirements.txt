@@ -16,7 +16,7 @@ mysql-connector==2.2.9
 mysql-connector-python==8.0.19
 numpy==1.18.3
 pigame==1.9.5.dev0
-Pillow==7.1.2
+Pillow==8.1.1
 protobuf==3.6.1
 pygame==1.9.6
 pygame.snake==0.0.1a0
