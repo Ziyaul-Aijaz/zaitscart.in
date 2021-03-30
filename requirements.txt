@@ -20,7 +20,7 @@ Pillow==7.1.2
 protobuf==3.6.1
 pygame==1.9.6
 pygame.snake==0.0.1a0
-Pygments==2.6.1
+Pygments==2.7.4
 PyMySQL==0.9.3
 pypiwin32==223
 PyQt5==5.14.2
